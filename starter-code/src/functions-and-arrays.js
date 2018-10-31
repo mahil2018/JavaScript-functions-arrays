@@ -53,6 +53,9 @@ sumArray(numbers);
 // Calculate the Average
 let numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 function averageNumbers(numbersAvg) {
+  if (numbersAvg.length === 0){
+    return undefined;
+  }
   let sumNumbers=0;
   for (i=0; i<numbersAvg.length; i++){
   sumNumbers += numbersAvg[i];
@@ -103,24 +106,37 @@ var words = [
   'simple',
   'bring'
   ];
-  function uniquifyArray(words){
-  count=words.length;
-  // let wordsNew = "";
-  let repeatWord="";
-  j=0;
-  while (j<count){
-  repeatWord=words[j];
-  for (let i=0; i<count; i++){
-  if (repeatWord === words[i+1]){
-  words.splice([i+1],1);
-  count=count-1;
-  } 
-  }
-  j=j+1; 
-  }
-  return(words);
-  }
-  uniquifyArray(words);
+
+  // Unique Arrays
+var words = [
+  'crab',
+  'poison',
+  'contagious',
+  'simple',
+  'bring',
+  'sharp',
+  'playground',
+  'poison',
+  'communion',
+  'simple',
+  'bring'
+  ];
+
+  function uniquifyArray(array){ 
+    if(array.length === 0){
+      return undefined
+    }    
+    let wordsNew = [];
+    for (let i=0; i<array.length; i++){
+      if (wordsNew.indexOf(array[i])=== -1){
+        wordsNew.push(array[i]);
+      } 
+     }
+     return wordsNew;
+    }
+    uniquifyArray(words);
+
+ 
 
 // Finding Elements
 var wordsFind = [
